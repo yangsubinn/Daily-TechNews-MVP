@@ -33,9 +33,9 @@ iOS/AI 개발자를 위한 개인 테크 뉴스 브리핑 자동화 시스템입
 ## 파이프라인
 
 ```
-RSS 수집 (Hacker News / TechCrunch AI)
-↓
-관심 키워드 필터링 (iOS, AI, LLM, Swift, Apple 등)
+RSS 수집
+ - 일반 피드 (Hacker News, TechCrunch AI) → 키워드 필터링 적용
+ - iOS 전문 피드 (SwiftLee, Hacking with Swift, NSHipster, Apple Developer News) → 전체 수집
 ↓
 Groq(Llama 3) → 한국어 제목 번역 + 3줄 요약 + 중요도 + 태그
 ↓
@@ -54,7 +54,7 @@ Notion DB 저장
 | Summary | text | 3줄 요약 |
 | Importance | select | HIGH / MID / LOW |
 | Tags | multi-select | iOS, AI, LLM, Apple 등 분야 태그 |
-| Source | select | 출처 (Hacker News, TechCrunch AI) |
+| Source | select | 출처 (Hacker News, TechCrunch AI, SwiftLee, Hacking with Swift, NSHipster, Apple Developer News) |
 | URL | url | 원문 링크 |
 | Published At | date | 기사 원발행일 |
 | Briefed At | date | 수집일 (날짜별 브리핑 구분용) |
