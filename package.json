@@ -26,9 +26,9 @@
     "typescript": "^6.0.3"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
     "@notionhq/client": "^5.20.0",
     "dotenv": "^17.4.2",
+    "groq-sdk": "^1.1.2",
     "rss-parser": "^3.13.0"
   }
 }
