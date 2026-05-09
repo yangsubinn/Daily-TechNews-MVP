@@ -7,7 +7,8 @@
     "start": "ts-node src/index.ts",
     "build": "tsc",
     "dev": "ts-node src/index.ts",
-    "preview": "ts-node src/preview.ts"
+    "preview": "ts-node src/preview.ts",
+    "setup": "ts-node src/setup.ts"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,7 @@
     "typescript": "^6.0.3"
   },
   "dependencies": {
-    "@notionhq/client": "^5.20.0",
+    "@notionhq/client": "^2.2.15",
     "dotenv": "^17.4.2",
     "groq-sdk": "^1.1.2",
     "rss-parser": "^3.13.0"

@@ -25,11 +25,11 @@ async function preview() {
       const badge = result.importance === "HIGH" ? "🔴" : result.importance === "MID" ? "🟡" : "🟢";
 
       console.log();
-      console.log(`${badge} [${result.importance}] ${item.title}`);
+      console.log(`${badge} [${result.importance}] ${result.titleKo}`);
+      console.log(`- 태그: ${result.tags.join(", ")}`);
       console.log(`- 출처: ${item.source}`);
       console.log(`- URL: ${item.url}`);
       console.log(`- 요약: ${result.summary}`);
-      console.log(`- 왜 중요한가: ${result.whyImportant}`);
       console.log("-".repeat(60));
     } catch (e) {
       console.error(`  요약 실패:`, e);

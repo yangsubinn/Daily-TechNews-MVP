@@ -1,6 +1,7 @@
 import "dotenv/config";
 import { fetchNews } from "./rss";
 import { summarize } from "./summarize";
+import { saveToNotion } from "./notion";
 
 async function main() {
   console.log("뉴스 수집 시작...\n");
@@ -8,21 +9,22 @@ async function main() {
   const news = await fetchNews();
   console.log(`총 ${news.length}개 기사 수집됨\n`);
 
+  let saved = 0;
+
   for (const item of news) {
     console.log(`[${item.source}] ${item.title}`);
-    console.log(`  URL: ${item.url}`);
 
     try {
       const result = await summarize(item.title, item.content);
-      console.log(`  중요도: ${result.importance}`);
-      console.log(`  요약: ${result.summary}`);
-      console.log(`  왜 중요한가: ${result.whyImportant}`);
+      await saveToNotion(item, result);
+      console.log(`  ✓ Notion 저장 완료 (${result.importance})`);
+      saved++;
     } catch (e) {
-      console.error(`  요약 실패:`, e);
+      console.error(`  ✗ 실패:`, e);
     }
-
-    console.log("");
   }
+
+  console.log(`\n완료: ${saved}/${news.length}개 저장됨`);
 }
 
 main().catch(console.error);
