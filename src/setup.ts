@@ -32,8 +32,12 @@ async function setupDatabase() {
       Source: {
         select: {
           options: [
-            { name: "Hacker News", color: "orange" },
-            { name: "TechCrunch AI", color: "blue" },
+            { name: "Hacker News" },
+            { name: "TechCrunch AI" },
+            { name: "SwiftLee" },
+            { name: "Hacking with Swift" },
+            { name: "NSHipster" },
+            { name: "Apple Developer News" },
           ],
         },
       },
