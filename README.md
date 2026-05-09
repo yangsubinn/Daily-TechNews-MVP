@@ -3,6 +3,8 @@
 iOS/AI 개발자를 위한 개인 테크 뉴스 브리핑 자동화 시스템.
 매일 오전 7시에 최신 기술 뉴스를 수집하고 AI로 요약해 Notion에 자동 저장한다.
 
+**[→ Notion에서 보기](https://nosy-repair-8a6.notion.site/35b5d493ce9a803f94a1fafb18b4a266?v=35b5d493ce9a80c3b1a1000c526fb40b&source=copy_link)**
+
 ---
 
 ## 용도
