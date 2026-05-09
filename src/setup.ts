@@ -39,6 +39,7 @@ async function setupDatabase() {
       },
       URL: { url: {} },
       "Published At": { date: {} },
+      "Briefed At": { date: {} },
     },
   });
 

@@ -30,6 +30,9 @@ export async function saveToNotion(item: NewsItem, summary: Summary): Promise<vo
       "Published At": {
         date: { start: new Date(item.publishedAt).toISOString() },
       },
+      "Briefed At": {
+        date: { start: new Date().toISOString().split("T")[0]! },
+      },
     },
   });
 }
