@@ -5,6 +5,15 @@ import type { Summary } from "./summarize";
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const DB_ID = process.env.NOTION_DB_ID!;
 
+export async function isDuplicate(url: string): Promise<boolean> {
+  const res = await notion.databases.query({
+    database_id: DB_ID,
+    filter: { property: "URL", url: { equals: url } },
+    page_size: 1,
+  });
+  return res.results.length > 0;
+}
+
 export async function saveToNotion(item: NewsItem, summary: Summary): Promise<void> {
   await notion.pages.create({
     parent: { database_id: DB_ID },
